@@ -36,8 +36,8 @@ class Settings:
     deepseek_base_url: str = field(default_factory=lambda: _get_env("DEEPSEEK_BASE_URL", required=False, default="https://api.deepseek.com/v1"))
     deepseek_model: str = field(default_factory=lambda: _get_env("DEEPSEEK_MODEL", required=False, default="deepseek-chat"))
 
-    # Admin
-    admin_telegram_id: int = field(default_factory=lambda: int(_get_env("ADMIN_TELEGRAM_ID")))
+    # Admin (password-based authentication, not telegram_id)
+    admin_password: str = field(default_factory=lambda: _get_env("ADMIN_PASSWORD"))
     support_username: str = field(default_factory=lambda: _get_env("SUPPORT_USERNAME", required=False, default=""))
 
     # Database
